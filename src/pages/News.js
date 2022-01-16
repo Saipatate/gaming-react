@@ -10,7 +10,7 @@ class News extends Component {
         <Title>Les Nouveautés</Title>
         <NewsContent>
           <Box>
-            <Img src='../assets/pc/pc1.png'></Img>
+            <Img src='../assets/pc/pc2.png'></Img>
             <Paragraph>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia libero repellat perferendis vero animi molestias dolores at dolorum illum accusantium, aperiam iusto alias nam esse fugit similique facilis exercitationem architecto. 
             </Paragraph>
