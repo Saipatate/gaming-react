@@ -1,5 +1,27 @@
 import styled from 'styled-components';
 
+const TitleContent = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 70px;
+`
+
+const TitleShop = styled.h1`
+position: relative;
+
+&::after {
+  content: '';
+  background: #8a00ff;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+  border-radius: 10px;
+  position: absolute;
+}
+`
+
 const Title = styled.h1`
   font-size: 35px;
   position: relative;
@@ -17,11 +39,17 @@ const Title = styled.h1`
   }
 `
 
-const Img = styled.img`
+const NewImg = styled.img`
   top: -80px;
   width: 200px;
   position: absolute;
 `
+
+const Img = styled.img`
+  width: 200px;
+  margin-bottom: 15px;
+`
+
 const Button = styled.button`
   border: none;
   color: #fff;
@@ -33,4 +61,4 @@ const Button = styled.button`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `
 
-export { Title, Img, Button }
+export { Title, NewImg, Img, Button, TitleContent, TitleShop }

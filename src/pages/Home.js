@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Footer from '../components/Footer';
 import banner from '../images/banner.png';
 import News from './News';
 
@@ -13,6 +14,7 @@ const Home = () => {
       <Banner src={banner} alt="banner" />
     </Container>
     <News />
+    <Footer />
     </>
   );
 };
@@ -30,7 +32,7 @@ const Title = styled.h1`
 `
 
 const Banner = styled.img`
-  height: 100%;
+  width: 890px;
 `
 
 export default Home;

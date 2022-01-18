@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Button, Title, Img } from '../components/Components';
+import { Button, Title, NewImg } from '../components/Components';
 
 class News extends Component {
 
@@ -10,7 +10,21 @@ class News extends Component {
         <Title>Les Nouveautés</Title>
         <NewsContent>
           <Box>
-            <Img src='../assets/pc/pc2.png'></Img>
+            <NewImg src='../assets/pc/pc1.png'></NewImg>
+            <Paragraph>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia libero repellat perferendis vero animi molestias dolores at dolorum illum accusantium, aperiam iusto alias nam esse fugit similique facilis exercitationem architecto. 
+            </Paragraph>
+            <Button>En savoir plus</Button>
+          </Box>
+          <Box>
+            <NewImg src='../assets/pc/pc3.png'></NewImg>
+            <Paragraph>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia libero repellat perferendis vero animi molestias dolores at dolorum illum accusantium, aperiam iusto alias nam esse fugit similique facilis exercitationem architecto. 
+            </Paragraph>
+            <Button>En savoir plus</Button>
+          </Box>
+          <Box>
+            <NewImg src='../assets/screen/screen1.png'></NewImg>
             <Paragraph>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia libero repellat perferendis vero animi molestias dolores at dolorum illum accusantium, aperiam iusto alias nam esse fugit similique facilis exercitationem architecto. 
             </Paragraph>
@@ -37,12 +51,19 @@ const NewsContent = styled.div`
 `
 
 const Box = styled.div`
+  margin: 15px;
   padding: 15px;
   max-width: 350px;
   border-radius: 5px;
   background: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   position: relative;
+  transition: .4s;
+
+  &:hover {
+    transform: translateY(15px);
+    transition: .4s;
+  }
 `
 
 const Paragraph = styled.p`
