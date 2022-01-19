@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Button, Title, Img } from '../../components/Components';
+import { Button, Img } from '../../components/Components';
 
 class Shop extends Component {
   render() {

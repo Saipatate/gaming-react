@@ -3,7 +3,7 @@ import { DataComputer } from '../../data/DataAll';
 import styled from 'styled-components';
 import Shop from './Shop';
 import Footer from '../../components/Footer';
-import { Title, TitleShop, TitleContent } from '../../components/Components';
+import { TitleShop, TitleContent } from '../../components/Components';
 
 class ItemList extends Component {
   state = {
