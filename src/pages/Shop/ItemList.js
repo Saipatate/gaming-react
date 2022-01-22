@@ -10,8 +10,12 @@ class ItemList extends Component {
     data: DataComputer,
     radios: [
       {id: 1, value: "Tout"},
-      {id: 2, value: "En Stock"},
-      {id: 3, value: "Plus En Stock"}
+      {id: 2, value: "PC Fixe"},
+      {id: 3, value: "PC Portable"},
+      {id: 4, value: "Casque"},
+      {id: 5, value: "Clavier"},
+      {id: 6, value: "Ecran"},
+      {id: 7, value: "Souris"}
     ],
     selectedRadio: "Tout"
   }
@@ -51,7 +55,9 @@ class ItemList extends Component {
         </BtnRadio>
         <Item>
         {
-          data.map(item => {
+          data
+          .filter(item => item.name.includes(selectedRadio) || item.nameAll.includes(selectedRadio))
+          .map(item => {
 
             return (
               <Shop key={item.id} item={item}/>
@@ -72,19 +78,22 @@ const Item = styled.div`
 `
 
 const BtnRadio = styled.ul`
-
+  display: flex;
+  justify-content: center;
+  list-style: none;
 `
 
 const BtnContent = styled.li`
-
+  margin: 15px;
 `
 
 const Input = styled.input`
-
+  
 `
 
 const Label = styled.label`
-
+  margin-left: 10px;
+  font-weight: 500;
 `
 
 export default ItemList;
