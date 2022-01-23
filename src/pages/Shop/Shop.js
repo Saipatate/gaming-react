@@ -4,16 +4,24 @@ import { Button, Img } from '../../components/Components';
 
 class Shop extends Component {
   render() {
-    let {picture, status} = this.props.item;
+    let {picture, status, price, news} = this.props.item;
 
     return (
       <Box>
+        {(() => {
+          if(news === "Nouveau") {
+            return (
+              <Nouveautés>{news}</Nouveautés>
+            )
+          }
+        })()}
         <Img src={picture}></Img>
+        <Price>{price}</Price>
         <Paragraph>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia libero repellat perferendis vero animi molestias dolores at dolorum illum accusantium, aperiam iusto alias nam esse fugit similique facilis exercitationem architecto. 
         </Paragraph>
         <BoxContent>
-          <Button>En savoir plus</Button>
+          <Button>Acheter</Button>
           <Stocked>
             {(() => {
               if(status === true){
@@ -57,21 +65,37 @@ const Box = styled.div`
   }
 `
 
+const Nouveautés = styled.h2`
+  position: absolute;
+  font-weight: 600;
+  color: #fff;
+  background: orangered;
+  right: 0;
+  top: 0;
+  padding: 5px;
+  border-radius: 0 0 0 10px;
+`
+
+const Price = styled.h2`
+color: #7b1f89;
+margin: 10px 0;
+position: relative;
+
+&::after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  top: -6px;
+  left: 0;
+  background: #d098ff;
+  border-radius: 10px;
+  position: absolute;
+}
+`
+
 const Paragraph = styled.p`
   margin-bottom: 25px;
   font-weight: 500;
-  position: relative;
-
-  &::after {
-    content: '';
-    width: 100%;
-    height: 4px;
-    top: -6px;
-    left: 0;
-    background: #a5a5a5;
-    border-radius: 10px;
-    position: absolute;
-  }
 `
 
 const BoxContent = styled.div`
@@ -83,6 +107,7 @@ const BoxContent = styled.div`
 const Stocked = styled.div`
 
 `
+
 const Stocke = styled.div`
   display: flex;
 `

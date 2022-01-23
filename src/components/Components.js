@@ -5,6 +5,10 @@ const TitleContent = styled.div`
   justify-content: center;
   font-size: 25px;
   margin-bottom: 70px;
+
+  @media (max-width: 400px) {
+    font-size: 18px;
+  }
 `
 
 const TitleShop = styled.h1`

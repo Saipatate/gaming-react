@@ -29,10 +29,27 @@ const Container = styled.div`
 
 const Title = styled.h1`
   font-size: 60px;
+
+  @media (max-width: 1024px) {
+    text-align: center;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 45px;
+  }
 `
 
 const Banner = styled.img`
   width: 890px;
+
+  @media (max-width: 1230px) {
+    width: 600px;
+  }
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `
 
 export default Home;

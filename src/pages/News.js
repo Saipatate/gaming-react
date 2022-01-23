@@ -48,12 +48,21 @@ const NewsContent = styled.div`
   display: flex;
   width: 1200px;
   height: 100%;
+
+  @media (max-width: 1230px) {
+    width: 100%;
+  }
+  
+  @media (max-width: 950px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 const Box = styled.div`
   margin: 15px;
   padding: 15px;
-  max-width: 350px;
+  width: 350px;
   border-radius: 5px;
   background: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -64,7 +73,15 @@ const Box = styled.div`
     transform: translateY(15px);
     transition: .4s;
   }
-`
+  
+  @media (max-width: 950px) {
+    margin: 50px;
+  }
+
+  @media (max-width: 380px) {
+    width: 100%;
+  }
+` 
 
 const Paragraph = styled.p`
   margin-top: 95px;

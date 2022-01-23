@@ -80,6 +80,7 @@ const Item = styled.div`
 const BtnRadio = styled.ul`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   list-style: none;
 `
 
@@ -88,7 +89,9 @@ const BtnContent = styled.li`
 `
 
 const Input = styled.input`
-  
+  &:checked {
+    color: red;
+  }
 `
 
 const Label = styled.label`
