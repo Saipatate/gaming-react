@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import Footer from '../components/Footer';
 
-const NotFound = () => {
+const NotFound = ({ colors }) => {
   return (
     <>
       <Container>
-        <TitleNotFound>404</TitleNotFound>
-        <Paragraph>Page non trouvée :/</Paragraph>
+        <TitleNotFound color={colors.$text}>404</TitleNotFound>
+        <Paragraph color={colors.$text}>Page non trouvée :/</Paragraph>
         <Link href="/">Retourner à l'accueil</Link>
       </Container>
       <Footer />
@@ -26,10 +26,12 @@ const Container = styled.div`
 
 const TitleNotFound = styled.h1`
   font-size: 6rem;
+  color: ${props => props.color};
 `
 const Paragraph = styled.p`
   font-size: 1.5rem;
   margin-bottom: 30px;
+  color: ${props => props.color};
 `
 
 const Link = styled.a`

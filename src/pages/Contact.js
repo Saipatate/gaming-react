@@ -13,9 +13,9 @@ const Contact = () => {
       <Box>
         <FormContent>
           <Left>
-            <Input type="text" placeholder='Nom' />
+            <Input type="text" placeholder='Nom'/>
             <Input type="text" placeholder='Prénom' />
-            <Input type="email" placeholder='E-mail' />
+            <Input type="email" placeholder='E-mail' required />
             <Input type="tel" placeholder='Téléphone' />
           </Left>
           <Right>

@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import ItemList from './pages/Shop/ItemList';
+import Admin from './pages/Admin'
 
 function App() {
   const [theme, setTheme] = useState('theme', 'dark')
@@ -28,7 +29,8 @@ function App() {
         <Route path="/" element={<Home colors={colors} />} />
         <Route path="/shop" element={<ItemList />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path='*' element={<NotFound />}/>
+        <Route path="/admin" element={<Admin />} />
+        <Route path='*' element={<NotFound colors={colors} />}/>
       </Routes>
     </div>
   );
