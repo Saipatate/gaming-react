@@ -4,17 +4,18 @@ import Footer from '../components/Footer';
 import banner from '../images/banner.png';
 import News from './News';
 
-const Home = () => {
+const Home = ({ colors }) => {
+
   return (
     <>
       <Container>
-      <Title>
+      <Title color={colors.$text}>
         La meilleur boutique de <br /> vente dans le gaming
       </Title>
       <Banner src={banner} alt="banner" />
     </Container>
-    <News />
-    <Footer />
+    <News colors={colors}/>
+    <Footer colors={colors} />
     </>
   );
 };
@@ -29,6 +30,7 @@ const Container = styled.div`
 
 const Title = styled.h1`
   font-size: 60px;
+  color: ${props => props.color};
 
   @media (max-width: 1024px) {
     text-align: center;

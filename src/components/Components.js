@@ -13,6 +13,7 @@ const TitleContent = styled.div`
 
 const TitleShop = styled.h1`
 position: relative;
+color: #ff7c7c;
 
 &::after {
   content: '';
@@ -30,6 +31,7 @@ const Title = styled.h1`
   font-size: 35px;
   position: relative;
   margin-bottom: 70px;
+  color: ${props => props.color};
 
   &::after {
     content: '';

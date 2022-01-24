@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import logo from '../images/logo_gr.png';
 
-const Navbar = () => {
+const Navbar = ({ colors }) => {
 
   const [toggleMenu, setToggleMenu] = useState(false);
   const [largeur, setLargeur] = useState(window.innerWidth);
@@ -32,23 +32,23 @@ const Navbar = () => {
   return (
     <Nav>
       <a href="/">
-        <Logo src={logo} alt="logo" />
+        <Logo color={colors.$text} src={logo} alt="logo" />
       </a>
       {(toggleMenu || largeur > 768) && (
-        <MiddleNav>
-          <NavItem>
+        <MiddleNav color={colors.$background}>
+          <NavItem color={colors.$text}>
             <a href='/'>Accueil</a>
           </NavItem>
-          <NavItem>
+          <NavItem color={colors.$text}>
             <a href='/shop'>Boutique</a>
           </NavItem>
-          <NavItem>
+          <NavItem color={colors.$text}>
             <a href='/contact'>Contacte</a>
           </NavItem>
         </MiddleNav>
       )}
       <Burger onClick={toggleNavSmallScreen}>
-        <span></span>
+        <span background={colors.$burger}></span>
       </Burger>
     </Nav>
   );
@@ -66,6 +66,7 @@ const Burger = styled.div`
   width: 30px;
   height: 30px;
   display: none;
+
   @media (max-width: 768px) {
     display: block;
     position: relative;
@@ -73,7 +74,7 @@ const Burger = styled.div`
   }
 
   & span {
-    background: #000;
+    background: #363636;
     width: 100%;
     height: 3px;
     top: 50%;
@@ -82,7 +83,7 @@ const Burger = styled.div`
 
     &::before {
       content: '';
-      background: #000;
+      background: #363636;
       width: 100%;
       height: 3px;
       margin-top: 10px;
@@ -91,7 +92,7 @@ const Burger = styled.div`
 
     &::after {
       content: '';
-      background: #000;
+      background: #363636;
       width: 100%;
       height: 3px;
       margin-top: -10px;
@@ -106,7 +107,7 @@ const MiddleNav = styled.ul`
   align-items: center;
 
   @media (max-width: 768px) {
-    background: #fff;
+    background: ${props => props.color};
     flex-direction: column;
     position: absolute;
     width: 100%;
@@ -123,7 +124,7 @@ const NavItem = styled.li`
 
   a {
     font-weight: 600;
-    color: #000;
+    color: ${props => props.color};
     font-size: 18px;
     position: relative;
     text-decoration: none;
@@ -136,7 +137,7 @@ const NavItem = styled.li`
 
     &::after {
       content: '';
-      background: #000;
+      background: ${props => props.color};
       width: 0;
       height: 4px;
       left: 0;
@@ -155,6 +156,7 @@ const NavItem = styled.li`
 
 const Logo = styled.img`
   width: 90px;
+  filter: ${props => props.color !== '#000' && 'invert(1)'};
 `
 
 export default Navbar;

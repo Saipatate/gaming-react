@@ -12,8 +12,8 @@ const FooterRow = styled.div`
   justify-content: center;
   align-items: center;
   height: 70px;
-  font-weight: 500;
-  color: #000;
+  font-weight: 600;
+  color: #363636;
 `
 
 export default Footer;

@@ -65,7 +65,7 @@ class ItemList extends Component {
           })
         }
       </Item>
-      <Footer />
+      <Footer/>
       </>
     );
   }
@@ -89,14 +89,13 @@ const BtnContent = styled.li`
 `
 
 const Input = styled.input`
-  &:checked {
-    color: red;
-  }
+
 `
 
 const Label = styled.label`
   margin-left: 10px;
   font-weight: 500;
+  color: #ff7c7c;
 `
 
 export default ItemList;
