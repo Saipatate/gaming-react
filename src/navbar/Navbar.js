@@ -48,7 +48,7 @@ const Navbar = ({ colors }) => {
         </MiddleNav>
       )}
       <Burger onClick={toggleNavSmallScreen}>
-        <span background={colors.$burger}></span>
+      {toggleMenu === false ? <i style={{color: colors.$text}} className="fas fa-bars burger"></i> : <i style={{color: colors.$text}} className="fas fa-times burger"></i>}
       </Burger>
     </Nav>
   );
@@ -63,41 +63,17 @@ const Nav = styled.nav`
 `
 
 const Burger = styled.div`
-  width: 30px;
-  height: 30px;
   display: none;
+
+  .burger {
+    font-size: 30px;
+    color: ${props => props.color};
+  }
 
   @media (max-width: 768px) {
     display: block;
     position: relative;
     cursor: pointer;
-  }
-
-  & span {
-    background: #363636;
-    width: 100%;
-    height: 3px;
-    top: 50%;
-    transform: translateY(-50%);
-    position: absolute;
-
-    &::before {
-      content: '';
-      background: #363636;
-      width: 100%;
-      height: 3px;
-      margin-top: 10px;
-      position: absolute;
-    }
-
-    &::after {
-      content: '';
-      background: #363636;
-      width: 100%;
-      height: 3px;
-      margin-top: -10px;
-      position: absolute;
-    }
   }
 `
 
